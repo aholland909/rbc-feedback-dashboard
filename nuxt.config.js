@@ -27,9 +27,6 @@ export default {
     'nuxt-buefy',
     '@nuxtjs/axios',
   ],
-  router: {
-    middleware: 'authenticated'
-  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
