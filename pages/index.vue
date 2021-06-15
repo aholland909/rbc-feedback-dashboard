@@ -33,6 +33,7 @@
 
 <script>
 import axios from 'axios'
+import auth from '@/mixins/auth.js'
 import FeedbackCard from '~/components/FeedbackCard.vue'
 
 export default {
@@ -55,12 +56,12 @@ export default {
       nextIcon: 'chevron-right',
     }
   },
+  mixins: [auth],
   components: {
     FeedbackCard,
   },
   mounted() {
     console.log('Welcome to feedback')
-    this.checkUser();
     this.getFeedback()
   },
   methods: {
@@ -90,15 +91,6 @@ export default {
             })
             return error
           })
-      }
-    },
-    checkUser() {
-      //check store for user
-      if (!this.user) {
-        this.$router.push({
-          path: '/login',
-        })
-        return
       }
     },
   },

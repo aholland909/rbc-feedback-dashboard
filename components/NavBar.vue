@@ -15,10 +15,11 @@
     </template>
 
     <template #end>
-      <b-navbar-item tag="div">
-        <b-button @click="logout" v-if="user" type="is-primary">
-          Log out
-        </b-button>
+      <b-navbar-item v-if="user" tag="div">
+        <b-button @click="logout" type="is-primary"> Log out </b-button>
+      </b-navbar-item>
+       <b-navbar-item v-else tag="router-link" :to="{ path: '/login' }">
+        <b-button type="is-primary"> Log in </b-button>
       </b-navbar-item>
     </template>
   </b-navbar>
